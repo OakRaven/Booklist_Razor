@@ -16,20 +16,22 @@
             <br />
             <table class="table table-condensed table-hover">
                 <tr>
-                    <th>@Html.DisplayNameFor(m => m.Books.FirstOrDefault().ISBN)</th>
-                </tr>
-                <tr>
+                    <th>@Html.DisplayNameFor(m => m.Books.FirstOrDefault().ISBN)</th>             
                     <th>@Html.DisplayNameFor(m => m.Books.FirstOrDefault().Title)</th>
-                </tr>
-                <tr>
                     <th>@Html.DisplayNameFor(m => m.Books.FirstOrDefault().Author)</th>
-                </tr>
-                <tr>
                     <th>@Html.DisplayNameFor(m => m.Books.FirstOrDefault().Price)</th>
-                </tr>
-                <tr>
                     <th>@Html.DisplayNameFor(m => m.Books.FirstOrDefault().Availibility)</th>
                 </tr>
+                @foreach(var item in Model.Books)
+                {
+                <tr>
+                    <td>@Html.DisplayFor(m => item.ISBN)</td>
+                    <td>@Html.DisplayFor(m => item.Title)</td>
+                    <td>@Html.DisplayFor(m => item.Author)</td>
+                    <td>@Html.DisplayFor(m => item.Price)</td>
+                    <td>@Html.DisplayFor(m => item.Availibility)</td>
+                </tr>
+                }
             </table>
         </div>
     </form> 
